@@ -9,7 +9,7 @@
   <div class="modal-window" id="modal-window">
     <div class="modal-window__form">
       <h2>Стать партнёром проекта</h2>
-      <form action="" id="modal-form-js" novalidate>
+      <form id="modal-form-js" novalidate>
         <div class="modal-window__form-columns">
           <div class="modal-window__form-inputs-col">
             <div class="modal-window__input">
@@ -66,7 +66,13 @@
             <span class="modal-window__label label-error__close modal-window__label_error modal-window__label_text-align error-title-js">
             * Загрузите логотип
           </span>
-            <input id="logo" type="file" class="modal-window__input-logo form-element-js" accept="image/*" required >
+            <input id="logo"
+                   type="file"
+                   class="modal-window__input-logo
+                   form-element-js"
+                   accept="image/*"
+                   required
+            >
           </div>
         </div>
         <div class="modal-window__input modal-window__input_select">
@@ -79,7 +85,9 @@
             <option value="economy">Экономика</option>
             <option value="urbanism">Урбанистика</option>
           </select>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Это поле должно быть заполнено</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Это поле должно быть заполнено
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -88,7 +96,9 @@
               <img src="./image/global.png" alt="vk icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -97,7 +107,9 @@
               <img src="./image/vk.png" alt="vk icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -106,7 +118,9 @@
               <img src="./image/ok.png" alt="ok icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -115,7 +129,9 @@
               <img src="./image/facebook.png" alt="facebook icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -124,7 +140,9 @@
               <img src="./image/instagram.png" alt="instagram icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_link">
           <div class="modal-window__input-link">
@@ -133,7 +151,9 @@
               <img src="./image/youtube.png" alt="youtube icon">
             </label>
           </div>
-          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Ведите URL</div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
         </div>
         <div class="modal-window__input modal-window__input_last">
           <label for="leader" class="modal-window__label">
@@ -142,8 +162,12 @@
           <input id="leader" type="text" class="form-element-js" minlength="5" maxlength="60">
           <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Введите ФИО руководителя</div>
         </div>
-        <button type="submit" class="modal-window__button-submit" id="submit-js">Стать партнёром проекта</button>
-        <button type="reset" class="modal-window__button-cancel">Отменить</button>
+        <button type="submit" class="modal-window__button-submit" id="submit-js">
+          Стать партнёром проекта
+        </button>
+        <button type="reset" class="modal-window__button-cancel">
+          Отменить
+        </button>
       </form>
     </div>
   </div>

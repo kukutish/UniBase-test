@@ -14,6 +14,8 @@ logoInput.addEventListener('change', (event) => {
         logoLabel.style.backgroundImage = "url('" + e.target.result + "')";
       }
       reader.readAsDataURL(image);
+    } else {
+      logoLabel.style.backgroundImage = "url('./image/logo-photo.png')"
     }
 })
 

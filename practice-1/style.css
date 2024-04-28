@@ -64,6 +64,12 @@ input,select:focus{
     z-index: 10;
 }
 
+.modal-window__container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .modal-window__form{
     background-color: #FFFFFF;
     padding: 3.3125rem 6.125rem;

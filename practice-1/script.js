@@ -33,7 +33,13 @@ submitButton.addEventListener('click', (event) => {
       }
     }
   })
-  toggle ? modalForm.submit() : event.preventDefault();
+
+  if(toggle){
+    modalForm.submit()
+  }else{
+    event.preventDefault();
+    modalWindow.scrollTop = 0;
+  }
 })
 
 

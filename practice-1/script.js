@@ -5,6 +5,8 @@ const logoInput = document.getElementById('logo');
 const logoLabel = document.getElementById('logo-label');
 const modalWindow = document.getElementById('modal-window');
 const buttonOpenModal  = document.getElementById('button-open-modal-js');
+const elementModalForm = document.getElementById('modal-window-form-js');
+const formElements = document.querySelectorAll('.form-element-js');
 
 logoInput.addEventListener('change', (event) => {
     const image = event.target.files[0];
@@ -21,7 +23,6 @@ logoInput.addEventListener('change', (event) => {
 
 submitButton.addEventListener('click', (event) => {
   let toggle = true;
-  const formElements = document.querySelectorAll('.form-element-js');
   formElements.forEach((elem, id) =>{
     if(!elem.validity.valid){
       errorTitle[id].classList.remove('label-error__close')
@@ -38,16 +39,25 @@ submitButton.addEventListener('click', (event) => {
     modalForm.submit()
   }else{
     event.preventDefault();
-    modalWindow.scrollTop = 0;
+    elementModalForm.scrollIntoView({ behavior: 'smooth' });
   }
 })
 
 
 modalForm.addEventListener('reset', () => {
-  modalWindow.style.display = 'none';
+  elementModalForm.classList.add('close-modal');
+  setTimeout(()=>{
+    modalWindow.style.display = 'none';
+  }, 300)
+  errorTitle.forEach(elem => {
+    elem.classList.add('label-error__close')
+  })
 })
 
 buttonOpenModal.addEventListener('click', ()=>{
   modalWindow.style.display = 'block';
-  modalWindow.scrollTop = 0;
+  modalWindow.scrollTop = 0
+  setTimeout(()=>{
+    elementModalForm.classList.remove('close-modal');
+  }, 300)
 })

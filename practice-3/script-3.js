@@ -52,6 +52,19 @@ function attachEventListeners(){
       sortedTable(elem.key, !elem.val)
       elem.val = !elem.val;
       updateTable(postsSorted)
+      const arrow = elem.elem.querySelector('img');
+      if(!elem.val){
+        arrow.classList.add('rotate-180');
+      } else {
+        arrow.classList.remove('rotate-180');
+      }
+
+      headers.forEach(el=>{
+        if(el !== elem) {
+          el.val = false
+          el.elem.querySelector('img').classList.remove('rotate-180');
+        }
+      })
     })
   })
 }

@@ -2,14 +2,17 @@
 .header-table{
     cursor: pointer;
     white-space: nowrap;
-    >div{
-        display: flex;
-        justify-content: center;
-        >img{
-            height: 1.2rem;
-            margin-left: 0.5rem;
-        }
-    }
+}
+
+.header-table div {
+    display: flex;
+    justify-content: center;
+}
+
+.header-table-arrow {
+    height: 1.2rem;
+    margin-left: 0.5rem;
+    display: none;
 }
 
 .input-search{
@@ -20,4 +23,8 @@
 
 .rotate-180{
     transform: rotate(180deg);
+}
+
+.open-sort-icon{
+    display: block;
 }

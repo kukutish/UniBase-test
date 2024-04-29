@@ -44,7 +44,7 @@ submitButton.addEventListener('click', (event) => {
 })
 
 
-modalForm.addEventListener('reset', () => {
+function closeForm() {
   elementModalForm.classList.add('close-modal');
   setTimeout(()=>{
     modalWindow.style.display = 'none';
@@ -52,7 +52,18 @@ modalForm.addEventListener('reset', () => {
   errorTitle.forEach(elem => {
     elem.classList.add('label-error__close')
   })
+}
+
+modalForm.addEventListener('reset', () => {
+  closeForm()
 })
+
+modalWindow.addEventListener('click', (evt)=>{
+  if(!evt.target.closest('#modal-window-form-js')){
+    closeForm()
+  }
+})
+
 
 buttonOpenModal.addEventListener('click', ()=>{
   modalWindow.style.display = 'block';

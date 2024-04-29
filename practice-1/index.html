@@ -4,178 +4,183 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="modal-window" id="modal-window">
-    <div class="modal-window__container">
-      <div class="modal-window__form">
-        <h2>Стать партнёром проекта</h2>
-        <form id="modal-form-js" novalidate>
-          <div class="modal-window__form-columns">
-            <div class="modal-window__form-inputs-col">
-              <div class="modal-window__input">
-                <label for="name" class="modal-window__label">
-                  <span>✱</span> Название организации
-                </label>
-                <input id="name" type="text" required class="form-element-js" minlength="3">
-                <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-                  * Введите название организации
-                </div>
-              </div>
-              <div class="modal-window__input">
-                <label for="phone" class="modal-window__label">
-                  <span>✱</span> Телефон
-                </label>
-                <input id="phone"
-                       type="tel"
-                       class="form-element-js"
-                       pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-                       required
-                >
-                <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-                  * Ведите номер телефона в формате +79000000000
-                </div>
-              </div>
-              <div class="modal-window__input">
-                <label for="email" class="modal-window__label">
-                  <span>✱</span> E-mail
-                </label>
-                <input id="email" type="email" required class="form-element-js">
-                <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-                  * Ведите корректный email
-                </div>
+<div class="modal-window" id="modal-window">
+  <div class="modal-window__container">
+    <div class="modal-window__form" id="modal-window-form-js">
+      <h2>Стать партнёром проекта</h2>
+      <form id="modal-form-js" novalidate>
+        <div class="modal-window__form-columns">
+          <div class="modal-window__form-inputs-col">
+            <div class="modal-window__input">
+              <label for="name" class="modal-window__label">
+                <span>✱</span> Название организации
+              </label>
+              <input id="name" type="text" required class="form-element-js" minlength="3">
+              <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+                * Введите название организации
               </div>
             </div>
-            <div class="modal-window__form-logo-col">
-              <div class="modal-window__label modal-window__label_logo">
-                <span>✱</span> Логотип (jpeg, png)
-              </div>
-              <label for="logo" class="modal-window__logo-input-container">
-            <span class="modal-window__label-logo" id="logo-label">
-              <span class="modal-window__label-logo-fogging"></span>
-              <span class="modal-window__label-logo-content">
-                <img class="modal-window__label-logo-icon" src="./image/logo-icon.png" alt="logo icon">
-                <span class="modal-window__label-logo-text">
-                  Выберите<br>файл
-                </span>
-              </span>
-            </span>
-                <span class="modal-window__label-close">
-              <img class="modal-window__label-close-icon" src="./image/close-icon.png" alt="close icon">
-            </span>
+            <div class="modal-window__input">
+              <label for="phone" class="modal-window__label">
+                <span>✱</span> Телефон
               </label>
-              <span class="modal-window__label label-error__close modal-window__label_error modal-window__label_text-align error-title-js">
-            * Загрузите логотип
-          </span>
-              <input id="logo"
-                     type="file"
-                     class="modal-window__input-logo
-                   form-element-js"
-                     accept="image/*"
+              <input id="phone"
+                     type="tel"
+                     class="form-element-js"
+                     pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                      required
               >
+              <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+                * Ведите номер телефона в формате +79000000000
+              </div>
+            </div>
+            <div class="modal-window__input">
+              <label for="email" class="modal-window__label">
+                <span>✱</span> E-mail
+              </label>
+              <input id="email" type="email" required class="form-element-js">
+              <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+                * Ведите корректный email
+              </div>
             </div>
           </div>
-          <div class="modal-window__input modal-window__input_select">
-            <label for="select" class="modal-window__label">
-              <span>✱</span> Направление
+          <div class="modal-window__form-logo-col">
+            <div class="modal-window__label modal-window__label_logo">
+              <span>✱</span> Логотип (jpeg, png)
+            </div>
+            <label for="logo" class="modal-window__logo-input-container">
+              <span class="modal-window__label-logo" id="logo-label">
+                <span class="modal-window__label-logo-fogging"></span>
+                <span class="modal-window__label-logo-content">
+                  <img class="modal-window__label-logo-icon" src="./image/logo-icon.png" alt="logo icon">
+                  <span class="modal-window__label-logo-text">
+                    Выберите<br>файл
+                  </span>
+                </span>
+              </span>
+              <span class="modal-window__label-close">
+                  <img class="modal-window__label-close-icon" src="./image/close-icon.png" alt="close icon">
+                </span>
             </label>
-            <select id="select" class="modal-window__select form-element-js" required>
-              <option ></option>
-              <option value="ecology">Экология</option>
-              <option value="economy">Экономика</option>
-              <option value="urbanism">Урбанистика</option>
-            </select>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Это поле должно быть заполнено
-            </div>
+            <span
+              class="modal-window__label label-error__close modal-window__label_error modal-window__label_text-align error-title-js"
+            >
+              * Загрузите логотип
+            </span>
+            <input id="logo"
+                   type="file"
+                   class="modal-window__input-logo
+                   form-element-js"
+                   accept="image/*"
+                   required
+            >
           </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="global" type="url" placeholder="avc.ru" class="form-element-js">
-              <label for="global" class="modal-window__input-label">
-                <img src="./image/global.png" alt="vk icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
+        </div>
+        <div class="modal-window__input modal-window__input_select">
+          <label for="select" class="modal-window__label">
+            <span>✱</span> Направление
+          </label>
+          <select id="select" class="modal-window__select form-element-js" required>
+            <option></option>
+            <option value="ecology">Экология</option>
+            <option value="economy">Экономика</option>
+            <option value="urbanism">Урбанистика</option>
+          </select>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Это поле должно быть заполнено
           </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="vk" type="url" placeholder="vk.com/shans" class="form-element-js">
-              <label for="vk" class="modal-window__input-label">
-                <img src="./image/vk.png" alt="vk icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
-          </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="ok" type="url" placeholder="ok.com/shans" class="form-element-js">
-              <label for="ok" class="modal-window__input-label">
-                <img src="./image/ok.png" alt="ok icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
-          </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="facebook" type="url" placeholder="facebook.com/shans" class="form-element-js">
-              <label for="facebook" class="modal-window__input-label">
-                <img src="./image/facebook.png" alt="facebook icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
-          </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="instagram" type="url" placeholder="instagram.com/shans" class="form-element-js">
-              <label for="instagram" class="modal-window__input-label">
-                <img src="./image/instagram.png" alt="instagram icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
-          </div>
-          <div class="modal-window__input modal-window__input_link">
-            <div class="modal-window__input-link">
-              <input id="youtube" type="url" placeholder="youtube.com/shans" class="form-element-js">
-              <label for="youtube" class="modal-window__input-label">
-                <img src="./image/youtube.png" alt="youtube icon">
-              </label>
-            </div>
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
-              * Ведите URL
-            </div>
-          </div>
-          <div class="modal-window__input modal-window__input_last">
-            <label for="leader" class="modal-window__label">
-              Руководитель
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="global" type="url" placeholder="avc.ru" class="form-element-js">
+            <label for="global" class="modal-window__input-label">
+              <img src="./image/global.png" alt="vk icon">
             </label>
-            <input id="leader" type="text" class="form-element-js" minlength="5" maxlength="60">
-            <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Введите ФИО руководителя</div>
           </div>
-          <button type="submit" class="modal-window__button-submit" id="submit-js">
-            Стать партнёром проекта
-          </button>
-          <button type="reset" class="modal-window__button-cancel">
-            Отменить
-          </button>
-        </form>
-      </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="vk" type="url" placeholder="vk.com/shans" class="form-element-js">
+            <label for="vk" class="modal-window__input-label">
+              <img src="./image/vk.png" alt="vk icon">
+            </label>
+          </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="ok" type="url" placeholder="ok.com/shans" class="form-element-js">
+            <label for="ok" class="modal-window__input-label">
+              <img src="./image/ok.png" alt="ok icon">
+            </label>
+          </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="facebook" type="url" placeholder="facebook.com/shans" class="form-element-js">
+            <label for="facebook" class="modal-window__input-label">
+              <img src="./image/facebook.png" alt="facebook icon">
+            </label>
+          </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="instagram" type="url" placeholder="instagram.com/shans" class="form-element-js">
+            <label for="instagram" class="modal-window__input-label">
+              <img src="./image/instagram.png" alt="instagram icon">
+            </label>
+          </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_link">
+          <div class="modal-window__input-link">
+            <input id="youtube" type="url" placeholder="youtube.com/shans" class="form-element-js">
+            <label for="youtube" class="modal-window__input-label">
+              <img src="./image/youtube.png" alt="youtube icon">
+            </label>
+          </div>
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">
+            * Ведите URL
+          </div>
+        </div>
+        <div class="modal-window__input modal-window__input_last">
+          <label for="leader" class="modal-window__label">
+            Руководитель
+          </label>
+          <input id="leader" type="text" class="form-element-js" minlength="5" maxlength="60">
+          <div class="modal-window__label modal-window__label_error label-error__close error-title-js">* Введите ФИО
+            руководителя
+          </div>
+        </div>
+        <button type="submit" class="modal-window__button-submit" id="submit-js">
+          Стать партнёром проекта
+        </button>
+        <button type="reset" class="modal-window__button-cancel">
+          Отменить
+        </button>
+      </form>
     </div>
   </div>
-  <div>
-    <button class="modal-window__button-submit" id="button-open-modal-js">Стать партнёром проекта</button>
-  </div>
-  <script src="script.js"></script>
+</div>
+<div>
+  <button class="modal-window__button-submit" id="button-open-modal-js">Стать партнёром проекта</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

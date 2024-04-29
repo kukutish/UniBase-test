@@ -44,6 +44,12 @@ input,select{
     margin: 0;
 }
 
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 
 input,select:focus{
     outline: none;
@@ -77,6 +83,8 @@ input,select:focus{
     margin: 0 auto;
     border-radius: .75rem;
     position: relative;
+    opacity: 100;
+    transition: 0.3s;
 }
 
 .modal-window:before{
@@ -101,12 +109,6 @@ input,select:focus{
     border: solid 1px #D6DADE;
     border-radius: 2px;
     margin-bottom: 2rem;
-
-    >select{
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
 }
 
 .modal-window__input_link{
@@ -304,6 +306,11 @@ input,select:focus{
 
 .modal-window__button-cancel:hover{
     opacity: 90%;
+}
+
+.close-modal{
+    margin-top: 100%;
+    opacity: 0;
 }
 
 @media (max-width:754px){

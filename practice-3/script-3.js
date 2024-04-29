@@ -53,6 +53,9 @@ function attachEventListeners(){
       elem.val = !elem.val;
       updateTable(postsSorted)
       const arrow = elem.elem.querySelector('img');
+      if(!arrow.classList.contains('open-sort-icon')){
+        arrow.classList.add('open-sort-icon')
+      }
       if(!elem.val){
         arrow.classList.add('rotate-180');
       } else {
@@ -62,7 +65,11 @@ function attachEventListeners(){
       headers.forEach(el=>{
         if(el !== elem) {
           el.val = false
-          el.elem.querySelector('img').classList.remove('rotate-180');
+          const imageArrow = el.elem.querySelector('img');
+          imageArrow.classList.remove('rotate-180');
+          if(imageArrow.classList.contains('open-sort-icon')){
+            imageArrow.classList.remove('open-sort-icon')
+          }
         }
       })
     })

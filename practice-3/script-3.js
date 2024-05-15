@@ -90,15 +90,15 @@ function updateTable(arr) {
 
 function updatePostsSearch(inputText) {
   postsSearch = postsSorted.filter(elem => {
-    const titleText = elem.title.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
-    const titleBody = elem.body.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
+    const titleText = elem.title.replace(/\n/g, ' ').toLowerCase().includes(inputText);
+    const titleBody = elem.body.replace(/\n/g, ' ').toLowerCase().includes(inputText);
     return (titleText || titleBody)
   })
 }
 
 const searchInput = document.getElementById('searchInput')
 searchInput.addEventListener('input', (evt)=>{
-  inputText = evt.target.value.replaceAll(' ', '').toLowerCase();
+  inputText = evt.target.value.toLowerCase();
   if(inputText.length >= 3){
     updatePostsSearch(inputText);
     updateTable(postsSearch)
@@ -108,5 +108,6 @@ searchInput.addEventListener('input', (evt)=>{
   }
 
 })
+
 
 

@@ -103,7 +103,7 @@ searchInput.addEventListener('input', (evt)=>{
     updatePostsSearch(inputText);
     updateTable(postsSearch)
   } else {
-    postsSearch = [];
+    if(postsSearch.length !== 0) postsSearch = [];
     updateTable(postsSorted)
   }
 

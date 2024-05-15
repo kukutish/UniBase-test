@@ -5,6 +5,8 @@ const postTableBody = document.getElementById('tbody-js');
 
 let posts = [];
 let postsSorted = [];
+let postsSearch = [];
+let inputText = '';
 async function displayPostsAsync() {
   try {
     posts = await getPosts();
@@ -49,9 +51,14 @@ function attachEventListeners(){
 
   headers.forEach((elem) => {
     elem.elem.addEventListener("click", ()=>{
-      sortedTable(elem.key, !elem.val)
+      sortedTable(elem.key, !elem.val);
+      if (postsSearch.length === 0) {
+        updateTable(postsSorted)
+      } else {
+        updatePostsSearch(inputText)
+        updateTable(postsSearch)
+      }
       elem.val = !elem.val;
-      updateTable(postsSorted)
       const arrow = elem.elem.querySelector('img');
       if(!arrow.classList.contains('open-sort-icon')){
         arrow.classList.add('open-sort-icon')
@@ -81,17 +88,22 @@ function updateTable(arr) {
   postTable.appendChild(createTable(arr));
 }
 
+function updatePostsSearch(inputText) {
+  postsSearch = postsSorted.filter(elem => {
+    const titleText = elem.title.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
+    const titleBody = elem.body.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
+    return (titleText || titleBody)
+  })
+}
+
 const searchInput = document.getElementById('searchInput')
 searchInput.addEventListener('input', (evt)=>{
-  const inputText = evt.target.value.replaceAll(' ', '').toLowerCase();
+  inputText = evt.target.value.replaceAll(' ', '').toLowerCase();
   if(inputText.length >= 3){
-    const filterPosts = postsSorted.filter(elem => {
-      const titleText = elem.title.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
-      const titleBody = elem.body.replace(/\n/g, '').replaceAll(' ', '').toLowerCase().includes(inputText);
-      return (titleText || titleBody)
-    })
-    updateTable(filterPosts)
+    updatePostsSearch(inputText);
+    updateTable(postsSearch)
   } else {
+    postsSearch = [];
     updateTable(postsSorted)
   }
 
